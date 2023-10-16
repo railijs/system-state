@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
 
 function App() {
+  const [result, setResult] = useState(0);
+  function addGang() {
+    setResult(result + 1);
+    console.log("gangs = " + result);
+  }
+
+  function removeGang() {
+    setResult(result - 1);
+    console.log("gangs = " + result);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={addGang}>gang +1</button>
+      <button onClick={removeGang}>gang -1</button>
+      <input type="text">ieraksti skaitli</input>
+
+      <h1>gangs = {result}</h1>
     </div>
   );
 }
